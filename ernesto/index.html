@@ -1,0 +1,596 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Pangroup - Ernesto Chatbot</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/slide.js" target="_blank"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js" target="_blank"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" target="_blank"></script>
+	</head>
+	<body class="is-preload">
+
+		<button class="open-button" onclick="openForm()">Ernesto</button>
+
+		<div class="chat-popup" id="myForm">
+  			<div class="wrapper2">
+				<div class="title">Ernesto</div>
+					<div class="form">
+						<div class="bot-inbox inbox">
+							<div class="icon">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="msg-header">
+								<p>Olá, Como posso te ajudar?</p>
+							</div>
+						</div>
+					</div>
+				<div class="typing-field">
+					<div class="input-data">
+						<input id="data" type="text" placeholder="Digite sua mensagem..." required>
+						<script>
+							$(document).keypress(function(e) {
+								if(document.getElementById("data").value.length != 0){
+									if(e.which == 13) $('#send-btn').click();
+								}
+							});
+						</script>
+						<button id="send-btn" class=botao>Enviar</button>
+						<button class="botao1" onclick="closeForm()">Fechar</button>
+					</div>
+					
+				</div>
+			</div>
+  		</div>
+
+  		<script>
+			$(document).ready(function(){
+				$("#send-btn").on("click", function(){
+					$value = $("#data").val();
+					$msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
+					$(".form").append($msg);
+					$("#data").val('');
+
+					$.ajax({
+						url: 'message.php',
+						type: 'POST',
+						data: 'text='+$value, 
+						success: function(result){
+							$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
+							$(".form").append($replay);
+							$(".form").scrollTop($(".form")[0].scrollHeight);
+						}
+					});
+				});
+			});
+		</script>
+
+		<script>
+			function openForm() {
+  				document.getElementById("myForm").style.display = "block";
+			}
+
+			function closeForm() {
+ 	 			document.getElementById("myForm").style.display = "none";
+			}
+		</script>
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Ernesto Chatbot</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="processoseletivo.html" target="_blank">Processo Seletivo</a></li>
+					<li><a href="nossaunidade.html" target="_blank">Nossa Unidade</a></li>
+					<li><a href="http://200.131.14.132/saiinfo2018/grupo1/pangroup/" target="_blank">Pangroup</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h1>Ernesto chatbot</h1>
+					<p>Ernesto é um chatbot desenvolvido pela <a href="http://200.131.14.132/saiinfo2018/grupo1/pangroup/" target="_blank" >Pangroup</a>, para ajudar você<br /> a encontrar sua graduação no <a href="https://www.ifmg.edu.br/portal" target="_blank">IFMG</a>, cadastre-se e deixa o resto com o Ernesto.</p>
+				</div>
+				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
+			</section>
+
+		<!-- Highlights -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Principais Unidades IFMG</h2>
+						<p>Aqui estão os principais os campus do IFMG espalhados <br/> por toda Minas Gerais e algumas informações relevantes sobre.</p>
+					</header>
+				<!-- Slideshow container -->
+				<div class="slideshow-container">
+
+				  <!-- Full-width images with number and caption text -->
+				  <div class="mySlides fade">
+				    <div class="numbertext">1 / 18</div>
+				    <img src="images/campus1.jpg" style="width:100%">
+				    <div class="text"></div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">2 / 18</div>
+				    <img src="images/campus2.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">3 / 18</div>
+				    <img src="images/campus3.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				   <div class="mySlides fade">
+				    <div class="numbertext">4 / 18</div>
+				    <img src="images/campus4.jpg" style="width:100%">
+				    <div class="text">Caption Text</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">5 / 18</div>
+				    <img src="images/campus5.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">6 / 18</div>
+				    <img src="images/campus6.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				   <div class="mySlides fade">
+				    <div class="numbertext">7 / 18</div>
+				    <img src="images/campus7.jpg" style="width:100%">
+				    <div class="text">Caption Text</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">8 / 18</div>
+				    <img src="images/campus8.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">9 / 18</div>
+				    <img src="images/campus9.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				    <div class="mySlides fade">
+				    <div class="numbertext">10 / 18</div>
+				    <img src="images/campus10.jpg" style="width:100%">
+				    <div class="text">Caption Text</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">11 / 18</div>
+				    <img src="images/campus11.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">12 / 18</div>
+				    <img src="images/campus12.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				    <div class="mySlides fade">
+				    <div class="numbertext">13 / 18</div>
+				    <img src="images/campus13.jpg" style="width:100%">
+				    <div class="text">Caption Text</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">14 / 18</div>
+				    <img src="images/campus14.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">15 / 18</div>
+				    <img src="images/campus15.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				    <div class="mySlides fade">
+				    <div class="numbertext">16 / 18</div>
+				    <img src="images/campus16.jpg" style="width:100%">
+				    <div class="text">Caption Text</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">17 / 18</div>
+				    <img src="images/campus17.jpg" style="width:100%">
+				    <div class="text">Caption Two</div>
+				  </div>
+
+				  <div class="mySlides fade">
+				    <div class="numbertext">18 / 18</div>
+				    <img src="images/campus18.jpg" style="width:100%">
+				    <div class="text">Caption Three</div>
+				  </div>
+
+				  <!-- Next and previous buttons -->
+				  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+				</div>
+				<br>
+
+				<!-- The dots/circles -->
+				<div style="text-align:center">
+				  <span class="dot" onclick="currentSlide(1)"></span>
+				  <span class="dot" onclick="currentSlide(2)"></span>
+				  <span class="dot" onclick="currentSlide(3)"></span>
+				  <span class="dot" onclick="currentSlide(4)"></span>
+				  <span class="dot" onclick="currentSlide(5)"></span>
+				  <span class="dot" onclick="currentSlide(6)"></span>
+				  <span class="dot" onclick="currentSlide(7)"></span>
+				  <span class="dot" onclick="currentSlide(8)"></span>
+				  <span class="dot" onclick="currentSlide(9)"></span>
+				  <span class="dot" onclick="currentSlide(10)"></span>
+				  <span class="dot" onclick="currentSlide(11)"></span>
+				  <span class="dot" onclick="currentSlide(12)"></span>
+				  <span class="dot" onclick="currentSlide(13)"></span>
+				  <span class="dot" onclick="currentSlide(14)"></span>
+				  <span class="dot" onclick="currentSlide(15)"></span>
+				  <span class="dot" onclick="currentSlide(16)"></span>
+				  <span class="dot" onclick="currentSlide(17)"></span>
+				  <span class="dot" onclick="currentSlide(18)"></span>
+				</div>
+
+					<div class="highlights">
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/congonhas" target="_blank"><img src="images/campus1.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/congonhas" target="_blank">Campus Congonhas</a></h3>
+								</header>
+								<p>Avenida Michael Pereira de Souza, 3007, Campinho
+								Congonhas, MG | CEP: 36415-000
+								-- Telefone: (31) 3731-8100
+								-- Diretor-geral: Robert Cruzoaldo Maria;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/conselheirolafaiete" target="_blank"><img src="images/campus2.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/conselheirolafaiete" target="_blank">Campus Conselheiro Lafaiete</a></h3>
+								</header>
+								<p>Rua Padre Teófilo Reyn, 441, São Dimas
+								Conselheiro Lafaiete, MG | CEP: 36400-000
+								-- Telefone: (31) 3762-4908
+								-- Diretor-geral: Rodrigo de Andrade Reis;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/governadorvaladares" target="_blank"><img src="images/campus3.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/governadorvaladares" target="_blank">Campus Governador Valadares</a></h3>
+								</header>
+								<p>Avenida Minas Gerais, 5189, Ouro Verde
+								Governador Valadares, MG | CEP: 35063-121
+								-- Telefone: (33) 3272-5400
+								-- Diretor-geral: Willerson Custódio da Silva;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/piumhi" target="_blank"><img src="images/campus4.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/piumhi" target="_blank">Campus Piumhi</a></h3>
+								</header>
+								<p>Rua Severo Veloso, 1880, Bela Vista
+								Piumhi, MG | CEP: 37925-000
+								-- Telefone: (37) 3371-3353 ou 3371-3755
+								-- Diretor-geral: Humberto Coelho de Melo;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/ourobranco" target="_blank"><img src="images/campus5.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/ourobranco" target="_blank">Campus Ouro Branco</a></h3>
+								</header>
+								<p>Rua Afonso Sardinha, 90, Pioneiros
+								Ouro Branco, MG | CEP: 36420-000
+								-- Telefone: (31) 3938-1200
+								-- Diretor-geral: Lawrence de Andrade Magalhães Gomes;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/ipatinga" target="_blank"><img src="images/campus6.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/ipatinga" target="_blank">Campus Ipatinga</a></h3>
+								</header>
+								<p>Rua Maria Silva, 125, Veneza
+								Ipatinga, MG | CEP: 35164-261
+								-- Telefone: (31) 3829-8615
+								-- Diretor-geral: Alex Andrade Fernandes;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/ouropreto" target="_blank"><img src="images/campus7.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/ouropreto" target="_blank">Campus Ouro Preto</a></h3>
+								</header>
+								<p>Rua Pandiá Calógeras, 898, Morro do Cruzeiro
+								Ouro Preto, MG | CEP: 35400-000
+								-- Telefone: (31) 3559-2186
+								-- Diretor-geral: Reginato Fernandes dos Santos;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/itabirito" target="_blank"><img src="images/campus8.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/itabirito" target="_blank">Campus Itabirito</a></h3>
+								</header>
+								<p>Rua José Benedito, 139, Santa Efigênia
+								Itabirito, MG | CEP: 35450-000
+								-- Telefone: (31) 3561-1269
+								-- Diretor-geral: Daniel França Fonseca;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/ribeiraodasneves" target="_blank"><img src="images/campus9.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/ribeiraodasneves" target="_blank">Campus Ribeirão das Neves</a></h3>
+								</header> 
+								<p>Rua Taiobeiras, 169, Sevilha
+								Ribeirão das Neves, MG | CEP: 33858-480
+								-- Telefone: (31) 3627-2303 ou 3627-2301
+								-- Diretor-geral: Maria das Graças de Oliveira;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/pontenova" target="_blank"><img src="images/campus10.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/pontenova" target="_blank">Campus Concelheiro Lafaiete</a></h3>
+								</header>
+								<p>Praça José Emiliano Dias, 87, Centro
+								Ponte Nova, MG | CEP: 35430-034
+								-- Telefone: (31) 3881-2630
+								-- Diretor-geral: Leonardo de Paiva Barbosa;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/sabara" target="_blank"><img src="images/campus11.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/sabara" target="_blank">Campus Sabará</a></h3>
+								</header>
+								<p>Rodovia MGT 262, Km 10, Sobradinho
+								Sabará, MG | CEP: 34590-390
+								-- Telefone: (31) 99571-6742 (número provisório)
+								-- Diretor-geral: Daniel Neves Rocha;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/formiga" target="_blank"><img src="images/campus12.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/formiga" target="_blank">Campus Formiga</a></h3>
+								</header>
+								<p>Rua São Luiz Gonzaga, s/nº, São Luiz
+								Formiga, MG | CEP: 35577-020
+								-- Telefone: (37) 3322-8434
+								-- Diretor-geral: Washington Santos da Silva;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/santaluzia" target="_blank"><img src="images/campus13.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/santaluzia" target="_blank">Campus Santa Luzia</a></h3>
+								</header>
+								<p>Rua Érico Veríssimo, 317, Londrina
+								Santa Luzia, MG | CEP: 33115-390
+								-- Telefone: (31) 3634-3949 ou 3637-5283
+								-- Diretor-geral: Wemerton Luis Evangelista;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/bambui" target="_blank"><img src="images/campus14.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/bambui" target="_blank">Campus Bambuí</a></h3>
+								</header>
+								<p>Fazenda Varginha, Estrada Bambuí/Medeiros, Km 05
+								Bambuí, MG | CEP: 38900-000
+								-- Telefone: (37) 3431-4900 ou 3431-4913
+								-- Diretor-geral: Rafael Bastos Teixeira;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/saojoaoevangelista" target="_blank"><img src="images/campus15.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/saojoaoevangelista" target="_blank">Campus São João Evangelista</a></h3>
+								</header>
+								<p>Avenida Primeiro de Junho, 1043, Centro
+								São João Evangelista, MG | CEP: 39705-000
+								-- Telefone: (33) 3412-2900 ou 3412-2906
+								-- Diretor-geral: José Roberto de Paula;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/betim" target="_blank"><img src="images/campus16.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/betim" target="_blank">Campus Betim</a></h3>
+								</header>
+								<p>Rua Itaguassu , 595 - Bairro São Caetano
+								Betim, MG | CEP: 32677-562
+								-- Telefone: (31) 3532-5930
+								-- Diretor-geral: Wellinton La Fontaine Lopes;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/arcos" target="_blank"><img src="images/campus17.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/arcos" target="_blank">Campus Arcos</a></h3>
+								</header>
+								<p>Av. Juscelino Kubitschek, 485, Distrito Industrial II
+								Arcos, MG | CEP: 35588-000
+								-- Telefone: (37) 3351-5173
+								-- Diretor: Charles Martins Diniz;
+								</p>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<header>
+									<a href="https://www.ifmg.edu.br/ibirite" target="_blank"><img src="images/campus18.jpg"width=260 height=180></a>
+									<h3><a href="https://www.ifmg.edu.br/ibirite" target="_blank">Campus Ibirité</a></h3>
+								</header>
+								<p>Rua Mato Grosso, 2, Vista Alegre
+								Ibirité, MG | CEP 32.407-190
+								-- Telefone: (31) 2010-1081
+								-- Diretor-geral: Oiti José de Paula;
+								</p>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- CTA -->
+			<section id="cta" class="wrapper">
+				<div class="inner">
+					<h2>Para mais instruções</h2>
+					<p>Para mais informações acerca dos nossos vários campus, chama o Ernesto no canto inferior direito da sua tela!</p>
+				</div>
+			</section>
+
+		<!-- Testimonials -->
+			<section class="wrapper">
+				<div class="inner">
+					<header class="special">
+						<h2>Faça como eles, chama o Ernesto!</h2>
+					</header>
+					<div class="testimonials">
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>Com o Ernesto, eu descobri o melhor curso da minha vida, a Administração! E ainda um campus pertinho da minha casa, o Campus de Ouro Branco.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</div>
+									<p class="credit">- <strong>Janaína Souza</strong> <span>Administração - Ouro Branco</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>O Ernesto me deu outro olhar acerca dos estudos, fazendo o que eu amo com profissionais excelentes e na minha própria cidade, estudar se tornou um prazer.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</div>
+									<p class="credit">- <strong>João Dias</strong> <span>Engenharia Elétrica - Ipatinga</span></p>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<blockquote>
+									<p>Como a tecnologia é incrível! Ernesto é uma grande ferramenta para qualquer estudante que queira achar as melhores opções de curso e campus dos IFMG's.</p>
+								</blockquote>
+								<div class="author">
+									<div class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</div>
+									<p class="credit">- <strong>Ana Oliveira</strong> <span>Ciência da Computação - Formiga</span></p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>Ernesto Chatbot - PanGroup</h3>
+							<p>Todos os direitos reservados a comunidade PanGroup@2021.</p>
+						</section>
+						<section>
+							<h4>Sobre nos:</h4>
+							<ul class="alt">
+								<li><a href="http://200.131.14.132/saiinfo2018/grupo1/pangroup/#intro" target="_blank">Conheça a PanGroup</a></li>
+								<li><a href="http://200.131.14.132/saiinfo2018/grupo1/pangroup/#services" target="_blank">Nossos trabalhos</a></li>
+								<li><a href="https://www.ifmg.edu.br/sabara" target="_blank">Nosso campus</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>Siga nosso campus nas redes sociais:</h4>
+							<ul class="plain">
+								<li><a href="https://pt-br.facebook.com/IfmgCampusSabara" target="_blank"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="https://www.instagram.com/ifmgsabara/?hl=pt-br" target="_blank"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="https://www.youtube.com/channel/UC8qCRMsJNeJbtOXOEE9BGsw/videos" target="_blank"><i class="icon fa-youtube">&nbsp;</i>Youtube</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+						&copy; Untitled. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
