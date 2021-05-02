@@ -15,8 +15,11 @@
 		<script src="assets/js/slide.js" target="_blank"></script>
 		<script src="https://kit.fontawesome.com/a076d05399.js" target="_blank"></script>
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" target="_blank"></script>
+		
+		<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+-->
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" onload="showSlides(1)">
 
 		<button class="open-button" onclick="openForm()">Ernesto</button>
 
@@ -85,7 +88,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Ernesto Chatbot</a>
+				<a class="logo" href="index.php">Ernesto Chatbot</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -94,9 +97,9 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="processoseletivo.html" target="_blank">Processo Seletivo</a></li>
-					<li><a href="nossaunidade.html" target="_blank">Nossa Unidade</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="processoseletivo.html" >Processo Seletivo</a></li>
+					<li><a href="nossaunidade.html" >Nossa Unidade</a></li>
 					<li><a href="http://200.131.14.132/saiinfo2018/grupo1/pangroup/" target="_blank">Pangroup</a></li>
 				</ul>
 			</nav>
@@ -109,160 +112,53 @@
 				</div>
 				<video autoplay loop muted playsinline src="images/banner.mp4"></video>
 			</section>
-
-		<!-- Highlights -->
-			<section class="wrapper">
-				<div class="inner">
-					<header class="special">
-						<h2>Principais Unidades IFMG</h2>
-						<p>Aqui estão os principais os campus do IFMG espalhados <br/> por toda Minas Gerais e algumas informações relevantes sobre.</p>
-					</header>
-				<!-- Slideshow container -->
-				<div class="slideshow-container">
-
-				  <!-- Full-width images with number and caption text -->
-				  <div class="mySlides fade">
-				    <div class="numbertext">1 / 18</div>
-				    <img src="images/campus1.jpg" style="width:100%">
-				    <div class="text"></div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">2 / 18</div>
-				    <img src="images/campus2.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">3 / 18</div>
-				    <img src="images/campus3.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				   <div class="mySlides fade">
-				    <div class="numbertext">4 / 18</div>
-				    <img src="images/campus4.jpg" style="width:100%">
-				    <div class="text">Caption Text</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">5 / 18</div>
-				    <img src="images/campus5.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">6 / 18</div>
-				    <img src="images/campus6.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				   <div class="mySlides fade">
-				    <div class="numbertext">7 / 18</div>
-				    <img src="images/campus7.jpg" style="width:100%">
-				    <div class="text">Caption Text</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">8 / 18</div>
-				    <img src="images/campus8.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">9 / 18</div>
-				    <img src="images/campus9.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				    <div class="mySlides fade">
-				    <div class="numbertext">10 / 18</div>
-				    <img src="images/campus10.jpg" style="width:100%">
-				    <div class="text">Caption Text</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">11 / 18</div>
-				    <img src="images/campus11.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">12 / 18</div>
-				    <img src="images/campus12.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				    <div class="mySlides fade">
-				    <div class="numbertext">13 / 18</div>
-				    <img src="images/campus13.jpg" style="width:100%">
-				    <div class="text">Caption Text</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">14 / 18</div>
-				    <img src="images/campus14.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">15 / 18</div>
-				    <img src="images/campus15.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				    <div class="mySlides fade">
-				    <div class="numbertext">16 / 18</div>
-				    <img src="images/campus16.jpg" style="width:100%">
-				    <div class="text">Caption Text</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">17 / 18</div>
-				    <img src="images/campus17.jpg" style="width:100%">
-				    <div class="text">Caption Two</div>
-				  </div>
-
-				  <div class="mySlides fade">
-				    <div class="numbertext">18 / 18</div>
-				    <img src="images/campus18.jpg" style="width:100%">
-				    <div class="text">Caption Three</div>
-				  </div>
-
-				  <!-- Next and previous buttons -->
-				  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-				</div>
-				<br>
-
-				<!-- The dots/circles -->
-				<div style="text-align:center">
-				  <span class="dot" onclick="currentSlide(1)"></span>
-				  <span class="dot" onclick="currentSlide(2)"></span>
-				  <span class="dot" onclick="currentSlide(3)"></span>
-				  <span class="dot" onclick="currentSlide(4)"></span>
-				  <span class="dot" onclick="currentSlide(5)"></span>
-				  <span class="dot" onclick="currentSlide(6)"></span>
-				  <span class="dot" onclick="currentSlide(7)"></span>
-				  <span class="dot" onclick="currentSlide(8)"></span>
-				  <span class="dot" onclick="currentSlide(9)"></span>
-				  <span class="dot" onclick="currentSlide(10)"></span>
-				  <span class="dot" onclick="currentSlide(11)"></span>
-				  <span class="dot" onclick="currentSlide(12)"></span>
-				  <span class="dot" onclick="currentSlide(13)"></span>
-				  <span class="dot" onclick="currentSlide(14)"></span>
-				  <span class="dot" onclick="currentSlide(15)"></span>
-				  <span class="dot" onclick="currentSlide(16)"></span>
-				  <span class="dot" onclick="currentSlide(17)"></span>
-				  <span class="dot" onclick="currentSlide(18)"></span>
-				</div>
-				<?php
-					echo "<div class=\"highlights\">";
-							
+			<?php	
+		
+		echo"<section class=\"wrapper\">";
+				echo"<div class=\"inner\">";
+					echo"<header class=\"special\">";
+						echo"<h2>Principais Unidades IFMG</h2>";
+						echo"<p>Aqui estão os principais os campus do IFMG espalhados <br/> por toda Minas Gerais e algumas informações relevantes sobre.</p>";
+					echo"</header>";
+					$aux = 1;
+					$sql = "SELECT * FROM Campus";
+							$conn = mysqli_connect("localhost", "saiinfo2018", "saiinfo2018pass", "PanGroupBD");
+							$resultado = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
+							echo"<div class=\"slideshow-container\">";
+							while ($registro = mysqli_fetch_array($resultado)){
+								$nome = $registro['nome'];
+				  				echo"<div class=\"mySlides fade\">";
+				   				echo"<div class=\"numbertext\">".$aux." / 37</div>";
+				    			echo"<img src=\"images/campus".$aux.".jpg\" style=\"width:100%\">";
+				    			echo"<div class=\"text\"><b>".$nome."</b></div>";
+				  				echo"</div>";
+								$aux = $aux + 1;
+			}
+			echo"<a class=\"prev\" onclick=\"plusSlides(-1)\">&#10094;</a>";
+			echo"<a class=\"next\" onclick=\"plusSlides(1)\">&#10095;</a>";
+		  echo"</div>";
+		  echo"<br>";
+		  
+			echo"<div style=\"text-align:center\">";
+				for ($i = 1; $i <= 37; $i++) {
+					
+					
+				  	echo"<span class=\"dot\" onclick=\"currentSlide(".$i.")\"></span>";
+				}
+				
+				echo"</div>";
+			
+			?>
+					
+		
+			
+	<?php	
+							echo"<div class=\"highlights\">";
 							$sql = "SELECT * FROM Campus";
 							$conn = mysqli_connect("localhost", "saiinfo2018", "saiinfo2018pass", "PanGroupBD");
 							$resultado = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 							 // Obtendo os dados por meio de um loop while
+							 $id = 0;
 								while ($registro = mysqli_fetch_array($resultado))
 								{
 								
@@ -271,12 +167,16 @@
 									$nome = $registro['nome'];
 									$endereco = $registro['endereco'];
 									$telefone = $registro['telefone'];
+									
+								
+									$id = $id + 1;
 									echo"<header>";
-									//echo"<a href=\"https://www.ifmg.edu.br/congonhas\" target=\"_blank\"><img src=\"images/campus1.jpg\"width=260 height=180></a>";
+									echo"<img src=\"images/campus".$id.".jpg\"width=260 height=180>";
 									echo"<h3><a target=\"_blank\">".$nome."</a></h3>";
 									echo"</header>";
 									echo "<p>".$endereco."</p>";
 									echo "<p>".$telefone."</p>";
+									
 									echo"</p>";
 									
 									echo "</div>";
@@ -348,7 +248,19 @@
 					</div>
 				</div>
 			</section>
-
+			
+			<form action="validacao.php" method="post">
+  				<fieldset>
+  					<legend>Login Admin</legend>
+     					 <label for="txer">Usuário</label>
+      					<input type="text" name="user" id="txuser" maxlength="25" />
+      					<label for="txSenha">Senha</label>
+      					<input type="password" name="senha" id="txSenha" />
+      				
+					<br>	  <input type="submit" value="Entrar" />
+ 				</fieldset>
+ 			 </form>
+			 
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
